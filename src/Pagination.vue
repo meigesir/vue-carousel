@@ -72,6 +72,9 @@ export default {
 .VueCarousel-pagination {
   width: 100%;
   text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .VueCarousel-dot-container {
