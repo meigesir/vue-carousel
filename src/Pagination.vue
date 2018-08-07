@@ -9,7 +9,6 @@
         v-bind:class="{ 'VueCarousel-dot--active': isCurrentDot(index) }"
         v-for="(page, index) in pagniationCount"
         :key="`${page}_${index}`"
-        v-on:click="goToPage(index)"
         :style="`
           margin-top: ${carousel.paginationPadding * 2}px;
           padding: ${carousel.paginationPadding}px;
@@ -20,6 +19,7 @@
           role="button"
           class="VueCarousel-dot-button"
           :tabindex="index"
+          v-on:click="goToPage(index)"
           :style="`
             width: ${carousel.paginationSize}px;
             height: ${carousel.paginationSize}px;
@@ -75,6 +75,7 @@ export default {
   position: absolute;
   left: 0;
   bottom: 0;
+  pointer-events: none;
 }
 
 .VueCarousel-dot-container {
@@ -96,6 +97,7 @@ export default {
   border-radius: 100%;
   outline: none;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .VueCarousel-dot-button:focus {
